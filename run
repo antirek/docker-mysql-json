@@ -1,0 +1,7 @@
+docker run --name mysql-server \
+           --rm \
+           --network host \
+           -e MYSQL_ROOT_PASSWORD=1234 \
+           -e MYSQL_DATABASE=cdr \
+           -v "$(pwd)/init:/docker-entrypoint-initdb.d" \
+           mysql:5.7
